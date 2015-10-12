@@ -5,41 +5,39 @@
 	<meta charset="utf-8">
 	<title>Prueba</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
 	<div class="navbar-wrapper">
 		<div class="container">
-			<nav class="navbar navbar-inverse navbar-fixed-top">
+			<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="#" class="navbar-brand">Nombre página</a>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigate">
+							<span class="sr-only">Mostrar / Ocultar menú</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="index.html" class="navbar-brand">Nombre página</a>
 					</div>
 
-					<div class="collapse navbar-collapse">
+					<div class="collapse navbar-collapse" id="navigate">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Inicio</a></li>
+							<li class="active"><a href="index.html">Inicio</a></li>
 							<li><a href="#">Arreglos navideños</a></li>
+							<li><a href="munecos.html">Muñecos</a></li>
 							<li><a href="#">Pantuflas</a></li>
-							<li><a href="#">Tercero</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" type="button" id="menu" data-toggle="dropdown" aria-extended="true">
-							Muñecos
-							<span class="caret"></span>
-						</a>
-								<ul class="dropdown-menu" role="menu" aria-labelledby="menu">
-									<li><a href="#">Navideños</a></li>
-									<li><a href="#">Decoración</a></li>
-									<li class="divider"></li>
-									<li><a href="#">Tercero</a></li>
-									<li><a href="#">Cuarto</a></li>
-								</ul>
-							</li>
 						</ul>
-						<div class="clearfix"></div>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="nav-divider"></li>
+							<li><a href="#">Contacto</a></li>
+						</ul>
 					</div>
+					<div class="clearfix"></div>
 				</div>
 			</nav>
 		</div>
@@ -65,7 +63,7 @@
 				<img class="second-slide" src="//mco-s2-p.mlstatic.com/munecos-navidenos-de-25-cms-x-3-unidades-462801-MCO20418873301_092015-F.jpg" alt="Second slide">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Muñecos</h1>
+						<a href="munecos.html"><h1>Muñecos</h1></a>
 					</div>
 				</div>
 			</div>
@@ -93,10 +91,10 @@
 			<div class="col-lg-4">
 				<div class="spec">
 					<img class="img-circle" src="http://cdn2.clasificados.com/pe/pictures/photos/000/578/116/original_P1030681.JP_7799.jpg">
-					<h2>Muñecos</h2>
+					<a href="munecos.html"><h2>Muñecos</h2></a>
 					<p>Solo muñecos texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba texto prueba </p>
 					<p>
-						<a class="btn btn-default" href="#">Muñecos <span class="glyphicon glyphicon-chevron-right"></span></a>
+						<a class="btn btn-default" href="munecos.html">Muñecos <span class="glyphicon glyphicon-chevron-right"></span></a>
 					</p>
 				</div>
 			</div>
@@ -121,6 +119,12 @@
 					</p>
 				</div>
 			</div>
+		</div>
+	</div>
+	</br>
+	<div class="footer container-fluid">
+		</br>
+		<div class="col-md-12">
 		</div>
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
