@@ -111,11 +111,35 @@ body {
   height: 200px;
 }
 
-.imagenes{
+.imagenes {
   text-align: center;
+}
+
+.imagenes:hover {
+  text-decoration: none;
+}
+
+.imagenes:active {
+  text-decoration: none;
+}
+
+.imagenes:link {
+  text-decoration: none;
+}
+
+.imagenes h4 {
+  font-weight: bold;
+}
+
+.imagenes p {
+  color: #9c9c9c;
 }
 
 .imagenes img {
   height: 200px;
   width: 200px;
+}
+
+.click-image {
+  min-width: 100%;
 }
