@@ -1,0 +1,3 @@
+navbar: #745785
+Seleccion navbar: #3D004C
+Color letra navbar: white
