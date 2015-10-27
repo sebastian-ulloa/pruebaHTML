@@ -4,8 +4,8 @@
     if(!$_SESSION['entrar']) die();
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $sql="INSERT INTO Producto (nombre, info, tipo, foto) VALUES
-            ('".$_POST['nombre']."','".$_POST['info']."','".$_POST['tipo']."','".$_POST['foto']."')";
+        $sql="INSERT INTO Producto (nombre, info, tipo, foto, album) VALUES
+            ('".$_POST['nombre']."','".$_POST['info']."','".$_POST['tipo']."','".$_POST['foto']."', '".$_POST['album']."')";
         if (mysqli_query($con,$sql)) {
             $mensaje="Datos creados correctamente";
         }else {
@@ -59,7 +59,13 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4" for="foto">Foto:</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="foto" placeholder="Link de la foto">
+                            <input type="text" class="form-control" name="foto" placeholder="Nombre de la foto">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="album">Albúm:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="album" placeholder="Link de la album">
                         </div>
                     </div>
                     <center>

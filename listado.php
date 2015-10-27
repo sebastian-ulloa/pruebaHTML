@@ -22,6 +22,7 @@
                 <th>Info</th>
                 <th>Tipo</th>
                 <th>Foto</th>
+                <th>Album</th>
             </tr>
             </thead>
             <tbody>
@@ -35,12 +36,12 @@
             case 1:
                 $tipo = "Arreglo";
                 break;
-            case 2:
-                $tipo = "Muneco";
+            case 3:
+                $tipo = "Pantufla";
                 break;
         }
         echo "<tr>";
-        echo '<td><input type="submit" class="btn btn-link" name="producto" value="'.$fila ['id'] . '"/></td><td>'.$fila['nombre'].'</td><td>' . $fila ['info']. "</td><td>" . $tipo. "</td><td>" . $fila ['foto']. "</td>";
+        echo '<td><input type="submit" class="btn btn-link" name="producto" value="'.$fila ['id'] . '"/></td><td>'.$fila['nombre'].'</td><td> ' . $fila ['info']. "</td><td>" . $tipo. "</td><td>" . $fila ['foto']. "</td><td>" . $fila ['album']. "</td>";
         echo "</tr>";
     }
     echo "</form>";

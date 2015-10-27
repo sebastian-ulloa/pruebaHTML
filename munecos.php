@@ -1,5 +1,6 @@
 <?php
     include_once "bd.php";
+    $url = "https://googledrive.com/";
 ?>
 <html>
 <head>
@@ -55,7 +56,7 @@
                 while($fila = mysqli_fetch_array($result)) {
                     echo '<div class="col-md-3 col-sm-6">
                         <a href="#imagen'.$num.'" class="thumbnail imagenes" data-toggle="modal">
-                            <div class="img-th" style="background-image: url('.$fila['foto'].')"></div>
+                            <div class="img-th" style="background-image: url('.$url."host/".$fila['album']."/".$fila['foto'].')"></div>
                             <div class="caption">
                                 <h4>'.$fila['nombre'].'</h4>
                                 <p>'.$fila['info'].'</p>
@@ -71,6 +72,7 @@
     <?php
                 $result = mysqli_query($con,"SELECT * FROM Producto WHERE tipo=2");
                 $num = 1;
+                $doc = new DOMDocument;
                 while($fila = mysqli_fetch_array($result)) {
                     echo '<div id="imagen'.$num.'" class="modal fade" tabindex="-1">
                             <div class="modal-dialog">
@@ -80,7 +82,33 @@
                                         <h4>'.$fila['nombre'].'</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <img class="img-responsive" src="'.$fila['foto'].'">
+                                        <div id="myCarousel" class="carousel slide carImg" data-ride="carousel">
+                                        		<div class="carousel-inner" role="listbox">';
+                                                    $albumURL = $url."host/".$fila['album'];
+                                                    @$doc->loadHTMLFile($albumURL);
+                                                    $xpath = new DOMXPath($doc);
+                                                    $anchors = $xpath->query('//a');
+                                                    $primero = true;
+                                                    foreach($anchors as $element) {
+                                                        $src = $element->getAttribute("href");
+                                                        if($src != "http://drive.google.com"){
+                                                            if($primero){
+                                                                $primero = false;
+                                                                echo '<div class="item active"><img src='.$url.$element->getAttribute("href").'></div>'."\n";
+                                                            }
+                                                            echo '<div class="item"><img src='.$url.$src.'></div>'."\n";
+                                                        }
+                                                    }
+                                        echo '</div>
+                                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                        			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        			<span class="sr-only">Previous</span>
+                                        		</a>
+                                        		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                        			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        			<span class="sr-only">Next</span>
+                                        		</a>
+                                            </div>
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="modal-footer">
@@ -97,8 +125,10 @@
         <div class="col-md-12">
         </div>
     </div>
+    <div class="modal-body">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
 </body>
 </html>

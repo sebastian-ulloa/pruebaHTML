@@ -4,7 +4,8 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if(isset($_POST['editar'])){
-            $sql="UPDATE Producto SET nombre='".$_POST['nombre']."', info='".$_POST['info']."', tipo=".$_POST['tipo'].", foto='".$_POST['foto']."' WHERE id=".$_SESSION['editando'];            
+            $sql="UPDATE Producto SET nombre='".$_POST['nombre']."', info='".$_POST['info']."', tipo=".$_POST['tipo'].
+            ", foto='".$_POST['foto']."', album='".$_POST['album']."' WHERE id=".$_SESSION['editando'];
             if (mysqli_query($con,$sql)) {
                 $mensaje="Datos actualizados correctamente";
             }else {
@@ -64,6 +65,12 @@
                         <label class="control-label col-sm-4" for="foto">Foto:</label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control" name="foto" placeholder="Link de la foto" value="<?php echo $fila1['foto'];?>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="album">Albúm:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="album" placeholder="Link de la album" value="<?php echo $fila1['album'];?>>
                         </div>
                     </div>
                     <center>
